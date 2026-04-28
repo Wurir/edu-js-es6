@@ -1,7 +1,12 @@
 import User from "./User";
 
 export default class Admin extends User {
-    constructor(){
-        super(this.login, this.password)
+    constructor(login, password){
+        super(login, password)
+    }
+
+    isPasswordCorrect(){
+        if(this.password.length >= 10) return true
+        return false
     }
 }
